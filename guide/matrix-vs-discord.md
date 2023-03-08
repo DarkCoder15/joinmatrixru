@@ -7,77 +7,77 @@ permalink: guide/matrix-vs-discord/
 description: It's time to ditch Discord. Imagine a place where users are actually respected. Join Matrix, the federated chat platform that does exactly that.
 ---
 
-## Matrix vs. Discord
+## Matrix против Discord
 
-Thank you for considering Matrix.
+Спасибо за выбор Matrix.
 
-Matrix has been a popular alternative to Discord, but many people still don't get the why. We will start with why you should move from Discord to Matrix, followed by comparisons of specific feature and some helpful tips. But before we do that, let's start with...
+Matrix является популярной альтернативой для Discord, но многие люди не понимают почему. Мы начнём с того, почему Вы должны перейти с Discord на Matrix, затем сравннения. Давайте начнём с...
 
-## A Discussion on the Proper Definition of "Server"
+## Спор правильного значения слова "Сервер"
 
-Recall the computing [definition](https://en.wiktionary.org/wiki/server#Noun) of the word "server":
+Вспомните компьютерное [определение](https://en.wiktionary.org/wiki/server#Noun) слова "сервера":
 
-> 1. A program that provides services to other programs or devices, either in the same computer or over a computer network.
+> 1. Программа, предоставляющяя сервисы другим программам или устройствам, в локальной или глобальной сети.
 >
-> 2. A computer dedicated to running such programs.
+> 2. Компьютер, выделенный для запуска таких программ.
 
-The definitions can hold true for a server for a multiplayer game (eg. Minecraft), a server reserved for a group of people for communication (eg. Mumble & TeamSpeak), and a server where Discord bots are being operated from. In each case, the server software (such as the Minecraft server jar file) meets definition #1, whereas the server infrastructure (eg. VPS) meets definition #2.
+Определения соответствуют игровым серверам (например Minecraft), сервер созданный для общения группы людей (например Mumble и TeamSpeak), сервер, где работают боты Discord/Telegram/итд. В каждом случае, серверное ПО (как файл сервера Minecraft) соответствует определению #1, серверное оборудование (например VDS) соответствует определению #2.
 
-But that's not the case for a Discord "server": it's just some data, together with data of other "servers," resting on Discord's computational servers. A Discord "server" is not a program on its own, nor has any computational infrastructure been dedicated to any specific "server,"[^14] thus violating both definitions. Presumably to attract gamers who often utilizes the correct "server" concept, Discord attempts to equate it to a chat group, muddying the waters for the definition of this technical term. (Hence Discord refers to "servers" as *guilds* in API documentations.)
+Но не в случае "сервера" Discord: это просто кучка данных, вместе с другими "серверами," лежащие на серверах Discord. "Сервер" Discord - не программа, и не оборудование для "серверов,"[^14] что нарушает оба определения. Скорее это чтобы привлечь геймеров, использующие правильное понятие слова "сервер", Discord пытается приравнять это к чат-группе, загрязняя определение этого технического термина. (Следовательно Discord отсылается к "серверам" как к *гильдиям (guilds)* в документации API.)
 
-### What about Matrix?
+### Что про Matrix?
 
-In Matrix, a *homeserver* is a server, in that it meets both definitions: Dedicated infrastructures (definition #2) running [a server software](../#set-up-your-own-homeserver-or-join-an-existing-homeserver) (definition #1). Furthermore, these homeservers, while operated independently of each other and not under the control of a single entity, communicate (transmitting messages and such) with each other using an agreed-upon protocol, thereby keeping the Matrix platform alive. Platforms that use such structure, such as Matrix, [fediverse](https://fediverse.party/en/fediverse) and email, are called federated platforms.
+В Matrix, *домашний сервер* - это сервер, поскольку он соответствует обоим определениям: Выделенная инфраструктура (определение №2) под управлением [серверного программного обеспечения](../#set-up-your-own-homeserver-or-join-an-existing-homeserver) (определение №1). Более того, эти домашние серверы, хотя и работают независимо друг от друга и не находятся под контролем одного субъекта, общаются (передают сообщения и т.п.) друг с другом по согласованному протоколу, тем самым поддерживая жизнь платформы Matrix. Платформы, использующие такую структуру, такие как Matrix, [Fediverse](https://fediverse.party/en/fediverse) и электронная почта, называются федеративными платформами.
 
-## Why not Discord?
+## Почему не Discord?
 
-I'm sure you can find a lot of valid criticisms of Discord, like [here](https://cadence.moe/blog/2020-06-06-why-you-shouldnt-trust-discord) or [here](https://austinhuang.me/discord-issues). Give them a read if you have time.
+Я уверен, что вы можете найти много обоснованной критики Discord, например, [здесь](https://cadence.moe/blog/2020-06-06-why-you-shouldnt-trust-discord) или [здесь](https://austinhuang.me/discord-issues). Прочитайте их, если у вас есть время.
 
-In the scope of this guide, the key reasons to move from Discord to Matrix are:
+В рамках данного руководства основными причинами для перехода с Discord на Matrix являются:
 
-* **Lack of privacy for private communications**, as private conversations are not only unencrypted, but also actively scanned (scope of which depends on your settings, but some happen even when you disable all the filtering-related toggles). [People reported](https://www.reddit.com/r/discordapp/comments/t5v3of/viruses_now_get_turned_into_recipe_links_funny/) their messages were substituted with cooking recipes when they tried to send something that is considered a virus by Discord.
-* **Excessive tracking some of which cannot be opted-out in a ToS-abiding way**, such as the [science endpoint](https://luna.gitlab.io/discord-unofficial-docs/science.html) and the process logger (for activity status)[^10]. Most third party clients and some client mods do not support science endpoint, nor process detection. To this date, there is no known user banned for not sending the telemetry data.
-* **Hostile stance against unofficial clients or client modifications**, thus preventing users from opting out of certain annoyances or tracking in a compliant way.
-* **Arbitrary phone number requirements**. Some users that are deemed suspicious and users that join certain "servers" are required to verify their phone number.
-* Discord has made **decisions against the users' best interests**, with the most recent ones being:
-  * Biased consultations and unilateral proposal of [cryptocurrency integrations](https://www.reddit.com/r/discordapp/comments/qpmhs5/discord_developers_please_do_not_support_nfts/) (which were only dropped after massive backlash); and
-  * Deprecating access to read text messages in "servers" with certain exceptions[^12], effectively equating to mandatory rollout of application commands based interaction flow, as well as KYC requirements, for running bots in more than 100 "servers" (which were *not* dropped despite [backlash](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1)).
-* **Closed source**, thus cannot be independently inspected.
-* **Lack of control for private data and no guarantee on reliability**, as Discord is centralized, not federated. See [here](../matrix-vs-al/#centralized-platforms).
-* **Paywalling richer expression abilities**.[^11] A user with Nitro unlocks certain additional features, mainly related to what can be included in a message, and twice as more guild cap, and twice as long message length limit.
-* **Not intended for serious use**. A developer experience staff at Discord explicitly said, "We are just a casual chatting app." Marketing campaigns of Discord, such as inclusion of gaming related figures, and use of funny memes, seem to agree with that stance.
+* **Недостаток конфиденциальности личных сообщений**, так как личные разговоры не только не шифруются, но и активно сканируются (масштабы этого зависят от ваших настроек, но некоторые происходят даже при отключении всех тумблеров фильтрации). [Люди сообщали](https://www.reddit.com/r/discordapp/comments/t5v3of/viruses_now_get_turned_into_recipe_links_funny/), что их сообщения были заменены кулинарными рецептами, когда они пытались отправить что-то, что Discord считает вирусом.
+* **Чрезмерное отслеживание, от которого нельзя отказаться в соответствии с ToS**, например, [телеметрия](https://luna.gitlab.io/discord-unofficial-docs/science.html) и регистратор процессов (для статуса активности)[^10]. Большинство сторонних клиентов и некоторые клиентские моды не поддерживают ни телеметрию, ни обнаружение процессов. На сегодняшний день не известно ни одного пользователя, которому бы запретили не отправлять данные телеметрии.
+* **Враждебная позиция по отношению к неофициальным клиентам или модификациям клиентов**, что не позволяет пользователям отказаться от некоторых раздражающих факторов или отслеживания совместимым способом.
+* **Арбитражные требования к номеру телефона**. Некоторые пользователи, которые считаются подозрительными, и пользователи, которые присоединяются к определенным "серверам", обязаны подтверждать свой номер телефона.
+* Discord принимает **решения, противоречащие интересам пользователей**, самыми последними из которых являются:
+  * Предвзятые консультации и одностороннее предложение [криптовалютных интеграций](https://www.reddit.com/r/discordapp/comments/qpmhs5/discord_developers_please_do_not_support_nfts/) (которые были отменены только после массового протеста); и
+  * Лишение доступа к чтению текстовых сообщений на "серверах" за некоторыми исключениями[^12], что фактически равносильно обязательному внедрению потока взаимодействия на основе команд приложения, а также требований KYC для запуска ботов на более чем 100 "серверах" (которые *не* были отменены, несмотря на [реакцию](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1)).
+* **Закрытый источник**, который не может быть проверен независимо.
+* **Отсутствие контроля за частными данными и отсутствие гарантий надежности**, поскольку Discord является централизованным, а не федеративным. См. [здесь](../matrix-vs-al/#centralized-platforms).
+* **Более богатые возможности выражения**.[^11] Пользователь с Nitro разблокирует некоторые дополнительные возможности, в основном связанные с тем, что может быть включено в сообщение, а также в два раза больше лимит "серверов", в два раза больше лимит длины сообщения, а также размер файлов до 500МБ.
+* **Не предназначено для серьезного использования**. Один из разработчиков Discord прямо сказал: "Мы просто приложение для случайного общения". Маркетинговые кампании Discord, такие как включая игровых компаний, связанных с играми, и использование забавных мемов, похоже, согласны с этой позицией.
  
-[Matrix addresses all of the above](../#why-matrix).
+[Matrix рассматривает все вышеперечисленное](../#why-matrix).
 
-### Special Note
+### Специальное примечание
 
-Matrix uses free software for its server and client softwares.
+Matrix использует свободное программное обеспечение для своих серверных и клиентских программ.
 
-* Those who are using or are planning to use Discord's "Student Hub" feature should urge your institution's IT department or your student union to set up a Matrix homeserver, which allows greater flexibility for communication, while ensuring your privacy and agency are respected. [Germans are already using it.](https://doc.matrix.tu-dresden.de/en/why/)
-* Open source communities should be aware that [using Discord is antithetical and discriminatory](https://drewdevault.com/2021/12/28/Dont-use-Discord-for-FOSS.html).
+* Тем, кто использует или планирует использовать функцию Discord "Student Hub", следует обратиться в IT-отдел вашего учебного заведения или в студенческий союз с просьбой установить домашний сервер Matrix, который обеспечивает большую гибкость в общении, гарантируя при этом конфиденциальность и уважение к вашему ведомству. [Немцы уже используют его.](https://doc.matrix.tu-dresden.de/en/why/)
+* Сообщества с открытым исходным кодом должны знать, что [использование Discord является противоестественным и дискриминационным](https://drewdevault.com/2021/12/28/Dont-use-Discord-for-FOSS.html).
 
-## Terminologies
+## Терминологии
 
-### Channel & DMs vs. Room
+### Канал и ЛС против комнаты
 
-In Discord, a place that allows sending text messages is called a channel (if belongs to a "server") or a DM.
+В Discord, место где можно отправлять сообщения "канал" (если пренадлежит к "серверу") или ЛС.
 
-In Matrix, a place that allows sending text messages is called a room.
+В Matrix, место где можно отправлять сообщения, - комната.
 
-### "Server" vs. Space
+### "Сервер" против Пространство
 
-In Discord, text channels that are not DMs (including group DMs) must be associated with a "server." Thus a "server" can be understood as a collection of channels that share certain settings.
+В Discord, текстовые каналы которые не являются ЛС (включая групповые ЛС) должны быть связаны с "сервером." Таким образом, "сервер" может быть понятен как список каналов, к которым применяются настройки сервера.
 
-In Matrix, rooms *can* be included in a Space. A Space can be used in similar fashion to a Discord "server" (controlled by the admins of the constituent rooms) or a "server" folder (controlled by anyone). A Space may also include another Space. Rooms do not share settings with Spaces, although rooms can require Space membership for joining.
+В Matrix, комнаты *могут* быть включены в пространства. Пространство может быть использовано как похожая мода к "серверу" Discord (управляются админами соответствующих комнат) или папка "серверов" (управляется кем угодно). Пространства могут включать дочерние пространства *(А что если включить пространство Б в пространство А, затем пространство А в пространство Б?)*. Комнаты не имеют общие настройки с пространствами, хотя комнаты могут требовать участие в пространстве для входа.
 
-## Feature comparison
+## Сравнения возможностей
 
-Note that Matrix does not (and cannot, due to its decentralized nature) paywall features. Thus any exception in Discord features that require Nitro or Nitro Classic subscription is not considered.
+Имейте в виду, что Matrix не (и не может) иметь платных возможности. Таким образом, любые исключения в функциях Discord, для которых требуется подписка Nitro или Nitro Classic, не рассматриваются.
 
-| Feature | Discord | Matrix |
+| Возможность | Discord | Matrix |
 | ------- | ------- | ------ |
-| **Registration** | Requires email. Discord may demand your phone number if it detects "suspicious activity." | Depending on homeserver (especially if you're running your own), **email may be optional**, and phone number is usually optional. There is no *automated* human check after registration. |
-| Price | Free, with certain features paywalled. | Free for [most homeservers](../../servers) (but please consider donating to them). Hosting a private homeserver may also incur cost (could be [free](https://matrix.org/docs/guides/free-small-matrix-server)). Note that paying (not donation) only affects where your data is hosted and (to a much lesser degree) server performance; it has no effect on features. |
+| **Регистрация** | Требует email. Discord может потребовать номер телефона если обнаружит "подозрительную активность." | В зависимости от домашнего сервера (тем более если у Вас свой), **email может быть необязателен**, и номер телефона в больших случаях не требуется/необязателен. Здесь нет *автоматической* проверки на человечность. |
+| Цена | Условно бесплатно. | Бесплатно [для многих домашних серверов](../../servers) (пожалуйста, предпочитайте донатить им). Обслуживание собственного домашнего сервера может быть платным (или [бесплатным?](https://matrix.org/docs/guides/free-small-matrix-server)). Заметьте что плата (не только донаты) только имеет разницу к месту, где находятся Ваши данные и производительность сервера; нет эффекта на возможностях. |
 | **Username** | Users are identified by display name (maximum 32 characters) + discriminator (4 randomly-assigned digits) to fellow users, and user IDs (Around 18 digits) for programming purposes. | Users are identified by their MXID (eg. `@alice:example.com`), composed of the username (must be ASCII characters, upper case letters are not allowed) and the server name (not exceeding 255 characters when combined, including the introducing at symbol and the colon separating the parts). A display name can be optionally added (up to ~65200 bytes)[^7]. |
 | Avatar | Static, maximum 8 MB. Cannot be zoomed unless using a bot or manually entering the URL to higher definition images, in which case the returned avatar has a maximum definition of 1024x1024. | **See "Attachments" for limits.** Can be zoomed (at least in Element/SchildiChat), in which case the avatar will be shown in the uploaded definition. Animated avatars are **supported**. |
 | Profile description and background | **Supported**. | Not supported currently, will be supported using profile rooms. |
