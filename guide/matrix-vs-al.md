@@ -7,72 +7,72 @@ permalink: guide/matrix-vs-al/
 description: It's time to ditch whatever messaging platform you're using. Join Matrix, the federated chat platform that actually respects you.
 ---
 
-## How does Matrix compare to other platforms?
+## Чем Matrix лучше других платформ?
 
-If the [reasons](../#why-matrix) did not convince you, then this page will show you how your existing platform compares with Matrix. Note that the guide only judges the de/merits of the platform itself, not its population (as network effect is used to keep users in [walled gardens](https://en.wikipedia.org/wiki/Closed_platform)). This comparison is also somewhat general, and improvements are welcomed. However, remember that an advantage that Matrix has is that with adequate setup, you can [bridge](../features/#all-about-bridges) other platforms!
+Хорошо, если [причины](../#почему-matrix) не переубедили Вас, эта страница сравнит другие платформы с Matrix. Примечание что гайд сравнивает только возможности платформ, не его популярность (т.к. эффект сети использован чтобы держать пользователей в [закрытых платформах](https://en.wikipedia.org/wiki/Closed_platform)). Это сравнение также носит несколько общий характер, и улучшения приветствуются. Однако помните, что преимущество Matrix в том, что при соответствующей настройке вы можете настроить [мосты](../features/#всё-про-мосты) с других платформ.
 
-Before we begin, it should be reminded that Matrix is a mix of security and socialization. Recall what we've wrote:
+Перед тем как Мы начнём, напоминаем что Matrix это микс безопасности и социализации. Вспомните что Мы написали:
 
-> Matrix is the long-awaited middleground between one-to-one messaging platforms (Facebook Messenger, WhatsApp, iMessages, SMS...) and social/collaborative messaging platforms (Discord, Slack, Telegram...): It offers an appropriate degree of privacy while allowing you to socialize/collaborate with others.
+> Matrix это середина между личными чатами (WhatsApp, SMS, iMessage и т.д.), и сотрудническими (Discord, Slack, Telegram и т.д.): он предлагает достаточную конфеденциальность, в то время как Вы можете общаться с другими.
 
-This means that Matrix *on its own*[^1] provides a certain degree of flexibility, allowing you to have more private conversations and open group collaborations at the same time, rather that providing absolute security for everything. If you insist on the latter, this guide suggests you to look elsewhere.
+Это означает, что Matrix *сам по себе*[^1] обеспечивает определенную степень гибкости, позволяя вам одновременно вести более приватные беседы и открытую групповую совместную работу, а не обеспечивает абсолютную безопасность для всего. Если вы настаиваете на последнем, это руководство советует вам поискать другое место.
 
-The comparisons for [Discord](../matrix-vs-discord) and [Telegram](../matrix-vs-telegram) are written on separate pages.
+Сравнения для [Discord](../matrix-vs-discord) и [Telegram](../matrix-vs-telegram) написаны на других страницах.
 
-### Centralized platforms
+### Централизованные платформы
 
-Most platforms you see on the market fall into this category.
+Многие платформы которые Вы видите в магазине приложений, попадают под эту категорию.
 
-The most important advantage of Matrix over these platforms is that Matrix is decentralized. This means that:
+Большая привилегия Matrix над этими платформами, это децентрализация. Это означает что:
 
-* There is no one entity controlling the day-to-day operations[^2] of the entire platform.
-  * This prevents any entity from making unilateral decisions, particularly those that may hurt users.
-  * While incidents (such as outage, acquisitions, and shutdowns) may affect one instance, they do not affect the entire platform, ensuring its longetivity and stability. (For example, incidents like [the Facebook outage on Oct 4, 2021](https://en.wikipedia.org/wiki/2021_Facebook_outage), where a configuration error on one server brought several Facebook-owned platforms to a complete halt, cannot happen to a federated platform.)
-* You can either trust one of the several entities (an instance) that holds your data, or hold the data yourself (by running an instance), whereas using centralized platforms requires you to trust the sole owner of the platform, who exclusively receives your private data and can do anything with it in any fashion it wants.
+* Никто не управляет операциями[^2] всей платформы.
+  * Никто не сможет делать односторонние решения, которые могут навредить пользователям.
+  * Пока инциденты (отключения) могут задействовать определённый домашний сервер, они не заденут целую платформу, обеспечивая его долгодействие и стабильность. (Например, инциденты как [отключение Facebook Окт. 4, 2021](https://en.wikipedia.org/wiki/2021_Facebook_outage), где ошибка в конфигурации одного сервера привела к многим платформам Facebook к полной остановке, что не может произойти с федерированной платформой.)
+* Вы можете либо доверять одному из нескольких субъектов (экземпляру), который хранит ваши данные, либо хранить данные самостоятельно (управляя экземпляром), тогда как использование централизованных платформ требует, чтобы вы доверяли единственному владельцу платформы, который получает только ваши частные данные и может делать с ними все, что захочет.
 
-Matrix allows users to encrypt their message contents, whereas:
+Matrix позволяет пользователям использовать сквозное шифрование, пока:
 
-* Centralized unencrypted platforms (such as Discord, Facebook Messenger, Instagram Direct, Revolt[^3], Slack, Snapchat, Telegram cloud chats[^4], QQ and WeChat) allow unobscured access to messages by the sole owner of each platform.
-* Centralized platforms that do not fully disclose details about their encryption algorithm (such as iMessage, [Line](https://citizenlab.ca/2017/08/linesecurity/), Telegram secure chats[^4], Viber[^5] and WhatsApp[^6]) cannot have their security independently verified.
+* Централизованные незашифрованные платформы (такие как Discord, Facebook Messenger, Instagram Direct, Revolt[^3], Slack, Snapchat, облачные чаты Telegram[^4], QQ и WeChat) разрешает безпрепятственный доступ к данным единственному владельцу платформы.
+* Централизованные платформы, которые не рассказывают подробности о методах их шифрования (такие как iMessage, [Line](https://citizenlab.ca/2017/08/linesecurity/), секретные чаты Telegram[^4], Viber[^5] и WhatsApp[^6]) не могут получить независимую проверку безопасности.
 
-Furthermore,
+Более того,
 
-* Some "secure" platforms (such as Signal and WhatsApp) require you to provide a phone number or email address. Most Matrix homeservers do not require phone numbers. Depending on setup (either selfhost or with certain public homeservers), it may be possible to use Matrix without an email address as well.
-* Although Signal receives widespread approval (and is probably the best centralized messaging platform in existence[^7]), its credibility continues to be subjected to ongoing debate: Its US jurisdiction, its dependence on AWS, its hostile stance towards forked clients, its delay in publishing source code, its controversial implementation of the spam detection mechanism... Whereas Matrix is [open](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom): freedom to choose jurisdiction, freedom from depending on specific third parties, freedom to choose clients, and transparency for everyone.
+* Некоторые "безопасные" платформы (такие как Signal и WhatsApp) требуют чтобы Вы указали номер телефона или адрес email. Многие домашние сервера Matrix  не требуют телефонные номера. В зависимости от настройки (самообслуживание или некоторые общедоступные домашние сервера), есть возможность пользоваться Matrix без адреса email.
+* Хотя Signal получил широкое одобрение (и, вероятно, является лучшей из существующих централизованных платформ обмена сообщениями[^7]), его авторитет продолжает подвергаться постоянным дебатам: юрисдикция США, зависимость от AWS, враждебная позиция по отношению к сторонним клиентам, задержка с публикацией исходного кода, спорная реализация механизма обнаружения спама... В то время как Matrix является [открытым](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom): свобода выбора юрисдикции, свобода от зависимости от конкретных третьих сторон, свобода выбора клиентов и прозрачность для всех.
 
 ### Session
 
-Session claims to be decentralized, but since the platform requires an ever-increasing amount[^8] of cryptocurrency stake for each node, running one is unreachable for most people (whereas for Matrix, there exists no such requirement from the platform), so the amount of nodes will eventually reach a finite ceiling, making it only marginally better than Signal.
+Session утверждает, что является децентрализованной, но поскольку платформа требует постоянно увеличивающуюся сумму[^8] криптовалютной ставки для каждого узла, запуск одного узла недостижим для большинства людей (в то время как для Matrix такого требования со стороны платформы не существует), поэтому количество узлов в конечном итоге достигнет конечного потолка, что делает ее лишь незначительно лучше Signal.
 
-### Another federated platform: XMPP
+### Другая федерационная платформа: XMPP
 
-XMPP and Matrix are very similar: most of [these](../#why-matrix) also apply to XMPP. The difference is that Matrix is much *much* more intuitive for an ordinary user, whereas XMPP is far from it.
+XMPP и Matrix очень похожи: большая часть [этого](../#why-matrix) также применяется к XMPP. Разница в том, что Matrix намного интуитивно понятнее для обычного пользователя, в то время как XMPP далёк от этого.
 
-* XMPP is relatively barebone, which may not be able to serve modern communication needs.
-* Clients are spread across different platforms and may support different features differently, making no client one-size-fits-all.
+* XMPP является относительно "bare-bone" продуктом, который может не удовлетворять современным коммуникационным потребностям.
+* Клиенты работают на разных платформах и могут по-разному поддерживать различные функции, что делает ни одного клиента универсальным.
 
-Furthermore, XMPP is not encrypted by default, but use of OMEMO is also quite widespread. Still, it has the same [metadata problem](https://web.archive.org/web/20211215132539/https://infosec-handbook.eu/articles/xmpp-aitm/) [as Matrix](../#fn:1). However, it is true that XMPP servers are lighter than Matrix, since in XMPP, most of the heavy work is done by the clients, whereas in Matrix, the homeservers need to constantly store things.
+Более того, XMPP не зашифрован по умолчанию, хотя, использование OMEMO довольно распространено. Всё-равно, он имеет [проблему метаданных](https://web.archive.org/web/20211215132539/https://infosec-handbook.eu/articles/xmpp-aitm/) [как Matrix](../#fn:1). Однако верно, что серверы XMPP легче, чем Matrix, поскольку в XMPP большая часть тяжелой работы выполняется клиентами, тогда как в Matrix домашние серверы должны постоянно что-то хранить.
 
-For reference, the official comment from matrix.org is [here](https://matrix.org/faq/#what-is-the-difference-between-matrix-and-xmpp%3F).
+Как ссылка, официальный комментарий от matrix.org [здесь](https://matrix.org/faq/#what-is-the-difference-between-matrix-and-xmpp%3F).
 
-### Peer-to-peer platforms
+### Peer-to-peer платформы
 
-Platforms like Briar, Cwtch and Jami offer much more security, but at a huge cost in terms of utility due to their peer-to-peer nature, requiring participants to be online to receive messages.
+Платформы как BitMessage, Jami предоставляют больше безопасности, но большой ценой в условиях утилиты из-за их природы peer-to-peer, требуя участников быть в сети для получения сообщений.
 
-## Footnotes
+## Примечания
 
-[^1]: Specifically, using the public Matrix federation. Some Matrix implementations (like the French government's *Tchap*) may have utilized closed federations and extended features for specific purposes, thereby providing more communication security.
+[^1]: В частности, использование публичной федерации Матрицы. Некоторые реализации Матрицы (например, *Tchap* французского правительства) могли использовать закрытые федерации и расширенные функции для определенных целей, обеспечивая тем самым большую безопасность связи.
 
-[^2]: i.e. Excluding development. But even so, Matrix allows its users to participate in the decision-making process.
+[^2]: т.е. исключение разработки. Но даже в этом случае Matrix позволяет своим пользователям участвовать в процессе принятия решений.
 
-[^3]: However, they [plan](https://github.com/orgs/revoltchat/projects/3/views/1?filterQuery=encr) to offer encryption in the undetermined future.
+[^3]: Тем не менее, они [планируют](https://github.com/orgs/revoltchat/projects/3/views/1?filterQuery=encr) предложить шифрование в неопределенном будущем.
 
-[^4]: Cloud chat is not encrypted in transit and is thus considered unencrypted. Secure chat uses Telegram's own MTProto protocol, comes with serious limitations on features, and is not widely used.
+[^4]: Облачный чат не шифруется при передаче и поэтому считается незашифрованным. Защищенный чат использует собственный протокол Telegram MTProto, имеет серьезные ограничения по возможностям и не имеет широкого применения.
 
-[^5]: Viber claims to use an encryption mechanism that is similar - but not identical - to the Signal protocol.
+[^5]: Viber утверждает, что использует механизм шифрования, который похож - но не идентичен - на протокол Signal.
 
-[^6]: Although Signal [claims](https://signal.org/blog/whatsapp-complete/) that WhatsApp is using the Signal protocol, WhatsApp's closed-source nature prevents independent verification.
+[^6]: Хотя Signal [утверждает](https://signal.org/blog/whatsapp-complete/), что WhatsApp использует протокол Signal, закрытый исходный код WhatsApp не позволяет провести независимую проверку.
 
-[^7]: In terms of both tech and reach (hence excluding Threema).
+[^7]: С точки зрения технологий и охвата (следовательно, исключая Threema).
 
-[^8]: Relative to fiat currencies.
+[^8]: По отношению к фиатным валютам.
