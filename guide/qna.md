@@ -6,85 +6,87 @@ parent: guide
 permalink: guide/qna/
 ---
 
-## Questions and Answers
+## Вопросы и ответы
 
-Miscellaneous clarifications and explanations.
+Различные уточнения и объяснения.
 
-## Other Matrix Guides
+## Другие гайды Matrix
 
-The following guides contain configurations that are specific to a homeserver, but most of the guidances apply across the Matrix federation:
+Следующие руководства содержат конфигурации, характерные для индивидуального домашнего сервера, но большинство из них применимы ко всей федерации Matrix:
 
 * [matrix-help.envs.net](https://matrix-help.envs.net/)
 * [Matrix at TU Dresden](https://doc.matrix.tu-dresden.de/en/)
 
-## About This Guide
+## Про этот гайд
 
-This guide is written by [Austin Huang](https://austinhuang.me) with the help of many people, whose feedback is greatly appreciated.
+Этот гайд был написан [Austin Huang](https://austinhuang.me) с помощью многих людей, чьи отзывы очень ценятся.
 
-The `joinmatrix.org` domain is donated by [Jonah Aragon](https://www.jonaharagon.com/), whose contribution is also greatly appreciated.
+Перевод на русский сделан [DarkCoder15](https://darkcoder15.tk).
 
-All contents of this guide are licensed under [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). Please link back to this website.
+Домен `joinmatrix.org` был подарен [Jonah Aragon](https://www.jonaharagon.com/), чей вклад очень сильно ценится.
 
-The logo is a derivative work of:
+Всё содержание <a href="https://joinmatrix.org">оригинального вебсайта</a> лицензировано под [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). Пожалуйста, оставляйте ссылку на оригинальный вебсайт.
 
-* [Matrix icon](https://commons.wikimedia.org/wiki/File:Matrix_icon.svg).
-* [Green Stylish Arrow](https://commons.wikimedia.org/wiki/File:Green_Stylish_Arrow.svg). Copyright 2015 Vitor Mazuco. CC BY-SA 4.0.
+Логотип является производной работой:
 
-### Privacy
+* [Логотипа Matrix](https://commons.wikimedia.org/wiki/File:Matrix_icon.svg).
+* [Залёная стильная стрелка (Green Stylish Arrow)](https://commons.wikimedia.org/wiki/File:Green_Stylish_Arrow.svg). Copyright 2015 Vitor Mazuco. CC BY-SA 4.0.
 
-This site is hosted on GitHub pages and thus [GitHub Privacy Statement](https://docs.github.com/en/github/site-policy/github-privacy-statement) applies.
+### Конфиденциальность
 
-This site uses analytics from [GoatCounter](https://goatcounter.com). It's [open source](https://github.com/zgoat/goatcounter). Here are [public stats for this website](https://joinmatrix.goatcounter.com) (The authors can see no more info than what you can see there) and [their privacy policy](https://www.goatcounter.com/privacy). You can disable this by blocking `gc.zgo.at` through your adblocker.
+Этот сайт размещён на GitHub pages, поэтому [GitHub Privacy Statement](https://docs.github.com/en/github/site-policy/github-privacy-statement) применяется.
 
-No cookies.
+Этот сайт использует аналитику [GoatCounter](https://goatcounter.com). Он является [ПО с открытым исходным кодом](https://github.com/zgoat/goatcounter). Здесь находятся [обшедоступные данные этого сайта](https://joinmatrix.goatcounter.com) (Авторы сайта не видят больше данных чем можете видеть Вы), и [политика конфиденциальности GoatCounter](https://www.goatcounter.com/privacy) применяется. Вы можете отключить это, заблокировав `gc.zgo.at` через Ваш adblocker.
 
-### Translations
+Без печенек (в смысле файлов).
 
-You can translate this guide to your own language. However, to be endorsed by this website, the translations are subject to the following conditions:
+### Переводы
 
-1. Remember the human. Do *whatever* you think is best for the advocacy of Matrix usage in your cultural context. This means that you have flexibility over how exactly to translate the texts.
-2. The [homeserver list](../../servers) is off-limits. You may, however, incorporate relevant information (such as how to read the list) in the guide. You may also suggest (but not endorse) homeservers according to your cultural context.
-3. You are under no obligation to use any specific theme or any static site generator at all - All I ask is please make sure the translations form a standalone website that is good-looking.
+Вы можете переводить этот гайд в другой язык. Тем не менее, для одобрения сайтом, переводы должны следовать следующим условиям:
+
+1. Будьте людьми. Делайте *что-угодно* что Вы считаете лучшим для для защиты использования Matrix в Вашем контексте культуры. Это означает, что у вас есть возможность гибко выбирать, как именно переводить тексты.
+2. [Список домашних серверов](../../servers) запрещён к изменениям. Однако, Вы можете, включить соответствующую информацию (например, как читать этот список) в гайде. Вы также можете предлагать (но не одобрять) домашние сервера, согласно Вашему контексту культуры.
+3. Вы не обязаны использовать какую-либо конкретную тему или вообще какой-либо генератор статических сайтов - я прошу лишь убедиться, что переводы образуют отдельный сайт, который хорошо выглядит.
 4. You are responsible for hosting that allows a custom subdomain (GitHub/GitLab/Gitea pages is fine).
 
-After you've done that, please [create an issue](https://github.com/austinhuang0131/joinmatrix/issues) to get your CNAME (language code `.joinmatrix.org`).
+После того как Вы сделали перевод, [создайте вопрос](https://github.com/austinhuang0131/joinmatrix/issues) чтобы получить Ваш CNAME (код языка + `.joinmatrix.org`).
 
-## Questions about Matrix
+## Вопросы про Matrix
 
-Check out [the official matrix.org FAQ](https://matrix.org/faq) as well!
+Посмотрите [официальный ЧАВО matrix.org](https://matrix.org/faq). Перевод официального ЧАВО - `Ещё не доступен`.
 
-### For average users, is Matrix trustworthy?
+### Для средних пользователей, Matrix заслуживает доверия?
 
-The tech? Yes, most of the components of Matrix are open source. The only exception that this guide is aware of is the Scalar integration manager, which Element and SchildiChat use as default. However, this guide [provides](../#pc-and-mobile) methods to use the open source [Dimension](https://github.com/turt2live/matrix-dimension) integration manager instead.
+Технология? Да, большая часть компонентов Matrix имеют открытый исходный код. Исключение - известный гайду менеджер интеграций Scalar, которые Element и SchildiChat используют по умолчанию. Однако, этот гайд [предоставляет](../#pc-and-mobile) методы использования открытого менеджера интеграций [Dimension](https://github.com/turt2live/matrix-dimension) вместо Scalar.
 
-The operators? Note that you have the freedom to pick [your homeserver](../../servers). Do you trust big corporations, or small guys that are actually enthusiastic about privacy? Do your research.
+Домашние сервера? Заметьте, Вы можете выбрать свободно [любой домашний сервер из списка](../../servers). Доверяете ли Вы большим, закрытым корпорациям, или челам которые реально в восторге от конфиденциальности? Делайте Ваши исследования.
 
-The only thing that may negatively affect trust is Matrix's use of a central identity server `vector.im` (`matrix.org` is just an alias of it), which handles contact discovery through email. However, as of late 2021 it can only be enabled on an opt-in basis. Furthermore, you can start a DM based on their MXID, so email is not required.
+Единственное, что может негативно повлиять на доверие, это использование Matrix центрального сервера идентификации `vector.im` (`matrix.org` - это всего лишь его псевдоним), который обрабатывает обнаружение контактов через электронную почту. Однако по состоянию на конец 2021 года его можно включить только по желанию. Более того, вы можете начать ЛС на основе их MXID, поэтому электронная почта не требуется.
 
-### How is Matrix funded?
+### Как финансируется Matrix?
 
-* The Matrix.org Foundation C.I.C., who develops the protocol and runs the matrix.org homeserver, is funded by [donations](https://matrix.org/faq/#who-and-how) (including from New Vector).
-* New Vector Ltd, who develops Element and offers commercial services related to Matrix, is funded by [investors](https://element.io/blog/tag/investment/).
-* Homeservers are independently funded. Some solicit donations. Others operate homeservers as part of a business.
+* The Matrix.org Foundation C.I.C., кто разрабатывают протокол и обслуживают домашний сервер matrix.org, финансируется [пожертвованиями](https://matrix.org/faq/#who-and-how) (включая от New Vector).
+* New Vector Ltd, кто разрабатывают Element и предоставляют коммерческие сервисы на основе Matrix, финансируется [инвесторами](https://element.io/blog/tag/investment/).
+* Домашние сервера финансируются независимо. Некоторые просят пожертвований. Другие обслуживают домашние сервера как часть бизнеса.
 
-#### What about Israeli intelligence?
+#### Что насчёт Израильской разведки?
 
-If, somehow, that you even *believed* this conspiracy theory, then consider:
+Если Вы, как-то *поверили* в эту теорию Заговора, тогда учтите:
 
-* It is [true](https://matrix.org/faq/#who-and-how) that Matrix was created by a bunch of employees in Amdocs, but just because Amdocs have allegedly done certain things doesn't mean these employees have done the same things? Since when are we defining people by where they work? Also, Tor is partially funded by the U.S. government, but why is nobody saying the same thing about Tor?
-* Data (including metadata) is only provided to homeservers that are in a room. So if a user on homeserver A is talking to a user on homeserver B, any data will only be present on homeservers A and B, not any other homeserver (unless someone else from a different homeserver is invited into the room). Furthermore, [XMPP has the same issue](https://infosec-handbook.eu/articles/xmpp-aitm/). And as always, if you're concerned about where your data will end up, you (and your friends) can always [spin up your own homeserver](../#set-up-your-own-homeserver-or-join-an-existing-homeserver)!
-* Matrix is well-funded because people believed in an open communication protocol. And their funding has paid off: We now have a well-built open communication protocol.
+* Это [правда](https://matrix.org/faq/#who-and-how) что Matrix был создан многими работниками Amdocs, но только потому-что Amdocs якобы сделали некоторые вещи не означают, что эти работники сделали то же самое? С каких это пор мы определяем людей по тому месту, где они работают? Также, Tor частично финансирован правительством США, но почему никто не говорит такое же про Tor?
+* Данные (включая метаданные) предоставляются только домашним серверам, находящиеся в общей комнате. Поэтому, если пользователь с домашнего сервера A общается с пользователем на домашнем сервере B, любые данные будут находиться только на домашних серверах A и B, нигде больше (до тех пор, пока пользователь с другого домашнего сервера не приглашён). Более того, [XMPP имеет такую же проблему](https://infosec-handbook.eu/articles/xmpp-aitm/). И как всегда, если Вы обеспокоены о том, куда Ваши данные попадут, Вы (и Ваши друзья) всегда могут [запустить свой домашний сервер](../#запустите-свой-домашний-сервер-или-присоединитесь-к-существующему)!
+* Matrix отлично финансирован, потому-что есть люди, которые доверяют открытому протоколу связи. И их финансирование окупилось: Теперь у Нас есть отличный открытый протокол связи.
 
-#### What about cryptocurrency funding?
+#### Что про финансирование криптовалютой?
 
-People [did ask for this](https://www.reddit.com/r/discordapp/comments/qq4qx3/is_there_a_discord_replacement_that_doesnt/hjy61jo/?context=3) during the [Discord NFT incident](../matrix-vs-discord/#why-not-discord). Now, it is true that Matrix is sponsored by a few cryptocurrency-related companies, but consider:
+Люди [спрашивали про это](https://www.reddit.com/r/discordapp/comments/qq4qx3/is_there_a_discord_replacement_that_doesnt/hjy61jo/?context=3) во время [Discord NFT инцидента](../matrix-vs-discord/#почему-не-discord). Сейчас, это правда что Matrix спонсируется некоторыми компаниями, связанные с криптовалютой, но учтите:
 
-* Open source projects are under no obligation to cater to their sponsors, so these sponsors usually just get a shoutout, that's it. Remember, donations are not commercial funding.
-* Furthermore, [Matrix is well-funded commercially](https://www.matrix.org/blog/2019/10/10/new-vector-raises-8-5-m-to-accelerate-matrix-riot-modular) and need not to cater to cryptobros.
-* Furthermore, because the Matrix platform is decentralized, and because the components of Matrix are open source,
-  * Pushing crypto onto a client (like Element) will directly result in a fork undoing such changes,
-  * Pushing crypto onto the homeserver software (like Synapse) will not only result in a fork undoing such changes, but also the effective fragmentation of the federation (since a portion of the homeservers will now use the non-crypto fork which may or may not be compatible with the one that has crypto), which is self-destructive.
+* Проекты с открытым исходным кодом не обязаны обслуживать своих спонсоров, поэтому эти спонсоры обычно просто получают похвалу, вот и все. Помните, что пожертвования не являются коммерческим финансированием.
+* Более того, [Matrix отлично финансирован коммерчески](https://www.matrix.org/blog/2019/10/10/new-vector-raises-8-5-m-to-accelerate-matrix-riot-modular) и нет необходимости обслуживать криптоменов.
+* Также, потому-что платформа Matrix децентрализована, и потому-что компоненты Matrix открыты,
+  * Добавление крипто в клиент (например Element) приведёт к созданию форка, отменяющего подобные изменения,
+  * Добавление крипто в ПО домашних серверов (например Synapse) не только приведёт к созданию форка, отменяющего подобные изменения, но ещё к эффективной фрагментации федерации (так-как будут сервера использующие ПО содержащие крипто, и ПО без крипто), что является само-уничтожением.
 
-Thus, even with funding, it will be very difficult for Matrix to even attempt trying to integrate something the community does not want.
+Поэтому, даже с финансированием, будет сложно добавить в Matrix то, что сообщество не желает.
 
-Also, if you insist that you refuse to use any platform that has ever been involved with cryptocurrencies, then there will be very, very few platforms that you can use. Think about it.
+Кроме того, если вы настаиваете на том, чтобы отказаться от использования какой-либо платформы, которая когда-либо была связана с криптовалютами, тогда будет очень и очень мало платформ, которые вы сможете использовать. Подумайте об этом.
