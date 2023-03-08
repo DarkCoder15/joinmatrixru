@@ -1,0 +1,49 @@
+// Add your custom styles here
+
+// Custom styles for the Stately marketing site
+
+.home-side-image-wrapper {
+  position: relative;
+  top: -30px;
+  height: 642px;
+}
+
+.home-side-image {
+  position: absolute;
+  left: -580px;
+  width: 843px;
+  height: 527px;
+}
+
+////////
+
+@media (max-width: 768px) {
+  .home-side-image-wrapper {
+    display:none;
+  }
+}
+
+img:not(.home-side-image) {
+  max-width: 100%;
+}
+
+.flash {
+  margin: 10px;
+}
+
+td.red {
+  background-color: pink;
+}
+
+td.green {
+  background-color: lightgreen;
+}
+
+td.orange {
+  background-color: lemonchiffon;
+}
+
+th {
+  position: sticky;
+  top: 0;
+}
