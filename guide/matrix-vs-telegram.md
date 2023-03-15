@@ -7,29 +7,29 @@ permalink: guide/matrix-vs-telegram/
 description: It's time to ditch Telegram. Join Matrix, the federated chat platform that actually respects you.
 ---
 
-## Matrix vs. Telegram
+## Matrix против Telegram
 
-Thank you for considering Matrix. We will start with why you should move from Telegram to Matrix, followed by comparisons of specific feature and some helpful tips.
+Спасибо за выбор Matrix. Мы начнём с того, почему Вы должны перейти с Telegram в Matrix, следуя сравнениями возможностей и подсказками.
 
-## Why not Telegram?
+## Почему не Telegram?
 
-In the scope of this guide, the key reasons to move from Telegram to Matrix are:
+В целе этого гайда, ключевые причины перемещения из Telegram в Matrix являются:
 
-* **Lack of privacy for private communications** since the default option is Cloud chat, which is not end-to-end encrypted. Secure chat also comes with significant feature limitations, such as no portability across devices.
-* **Ads**, even if it's just for popular channels. Third-party clients are also not allowed to opt them out, albeit nobody knows how Telegram will enforce that restriction.
-* **Phone number requirement.**
-* Despite Telegram claiming to have minimal intervention on legal content, it nevertheless made **controversial decisions**, such as [shutting down Russian political bots](https://en.wikipedia.org/wiki/Telegram_(software)#2021_shutdown_of_Russian_political_bots). (Matrix, on the other hand, is decentralized, which makes censorship technically difficult.)
-* **Telegram servers are closed source**. (Says to defend against state censorship...?)
-* **Lack of control for private data and no guarantee on reliability**, as Telegram is centralized, not federated. See [here](../matrix-vs-al/#centralized-platforms).
+* **Отсутствие конфиденциальности в ЛС** так-как опция по умолчанию это облачный чат, который не зашифрован. Секретные чаты также имеют ряд ограничений, такие как невозможность перемещения их между устройствами.
+* **Реклама**, даже если это просто для популярных каналов. Сторонним клиентам запрещено их убирать, хотя никто не знает как Telegram обеспечит соблюдение этого правила.
+* **Требование номера телефона.**
+* Несмотря на то, что Telegram заявляет, что имеет минимальное вмешательство в законодательный контент, тем не менее сделали **спорные решения**, такие как [отключение Российских политических ботов](https://en.wikipedia.org/wiki/Telegram_(software)#2021_shutdown_of_Russian_political_bots). (Matrix, децентрализован, что делает цензуру технически очень сложной.)
+* **Серверы Telegram имеют закрытый исходный код**. (Под предлогом защиты от государственной цензуры?...)
+* **Отсутствие управления конфиденциальными данными и надёжности**, так-как Telegram централизованный, не федерационный. См. [здесь](../matrix-vs-al/#централизованные-платформы).
 
-Despite recent studies, Telegram's use of its own MTProto protocol remains a debated subject, which will be left up to you.
+Несмотря на недавние, использование Telegram собственного протокола MTProto остаётся спорным предметом, что остаётся на Ваше усмотрение.
 
-## Feature comparison
+## Сравнение возможностей
 
 | Feature | Telegram | Matrix |
 | ------- | -------- | ------ |
-| **Registration** | Requires phone number. | **Phone number is usually optional.** Depending on homeserver, **email is commonly required**. There is usually no human check after registration. |
-| **Username** | Users are identified by phone number or username (if set up, 5\~32 alphanumeric characters) to fellow users, and user IDs (around 9\~10 digits) for programming purposes. A display name can be added (no limit). | Users are identified by their MXID (eg. `@alice:example.com`), composed of the username (must be ASCII characters, upper case letters are not allowed) and the server name (not exceeding 255 characters when combined, including the introducing at symbol and the colon separating the parts). A display name can be optionally added (up to ~65200 bytes)[^2]. |
+| **Регистрация** | Требует номера телефона. | **Номер телефона в основном не требуется.** В зависимости от домашнего сервера, **обычно требуется электронная почта**. Обычно отсутствует проверка после регистрации. |
+| **Имя пользователя** | Пользователи идентифицируются по номеру телефона и имени пользователя (если установлен, 5\~32 альфанумерических символов) для обычных пользователей, и ID (примерно 9\~10 цифр) для программистов. Отображаемое имя может быть добавлено (нет ограничений). | Пользователи идентифицируются по их MXID (например. `@alice:example.com`), сваренный из имени пользователя (только символы ASCII без больших букв) и адрес сервера (не должен превышать 255 символов при сложении, включая начальный символ и разделяющую двоеточие). Отображаемое имя также может быть добавлено (до ~65,2КБ)[^2]. |
 | Avatar | Static or animated; limit unknown. Can be zoomed; the returned avatar has a maximum definition of 640x640. | **See "Attachments" for limits.** Can be zoomed (at least in Element/SchildiChat), in which case the avatar will be shown in the uploaded definition. Animated avatars are supported and will be rendered (at least in Element/SchildiChat). |
 | Profile description | **Supported**. | Will be supported using profile rooms. Not supported currently. |
 | Room-specific nicknames | Not supported, though group admins can talk on behalf of the whole group. | **Supported** (`/myroomnick`). Up to ~65200 bytes. [^2] |
