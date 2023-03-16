@@ -30,36 +30,36 @@ description: It's time to ditch Telegram. Join Matrix, the federated chat platfo
 | ------- | -------- | ------ |
 | **Регистрация** | Требует номера телефона. | **Номер телефона в основном не требуется.** В зависимости от домашнего сервера, **обычно требуется электронная почта**. Обычно отсутствует проверка после регистрации. |
 | **Имя пользователя** | Пользователи идентифицируются по номеру телефона и имени пользователя (если установлен, 5\~32 альфанумерических символов) для обычных пользователей, и ID (примерно 9\~10 цифр) для программистов. Отображаемое имя может быть добавлено (нет ограничений). | Пользователи идентифицируются по их MXID (например. `@alice:example.com`), сваренный из имени пользователя (только символы ASCII без больших букв) и адрес сервера (не должен превышать 255 символов при сложении, включая начальный символ и разделяющую двоеточие). Отображаемое имя также может быть добавлено (до ~65,2КБ)[^2]. |
-| Avatar | Static or animated; limit unknown. Can be zoomed; the returned avatar has a maximum definition of 640x640. | **See "Attachments" for limits.** Can be zoomed (at least in Element/SchildiChat), in which case the avatar will be shown in the uploaded definition. Animated avatars are supported and will be rendered (at least in Element/SchildiChat). |
-| Profile description | **Supported**. | Will be supported using profile rooms. Not supported currently. |
-| Room-specific nicknames | Not supported, though group admins can talk on behalf of the whole group. | **Supported** (`/myroomnick`). Up to ~65200 bytes. [^2] |
-| Room-specific avatars | Not supported. | [**Supported**](../features/#attachments) (`/myroomavatar`). See "Attachments" for limits. |
-| 2FA | One-time token sent to another session. | Not required for login, but required (QR code, emoji verification, or Security Key) for viewing past encrypted messages. |
-| **Text messages** | Maximum 4096 characters. Supports Markdown. | **Up to ~65200 bytes (up to ~21270 bytes if a formatted message with plain text fallback sent).[^2] [Supports Markdown and HTML.](../features/#text)** |
-| Attachments | **Maximum 2 GB.** | Maximum 50~100 MB (for most homeservers; customizable if you run your own homeserver). |
-| Reactions | Very limited. Must be enabled by group admins in groups. | All unicode emotes and [text](../features/#reactions). |
-| Stickers | Up to 200 packs of 120 static or 50 animated each. | **Unlimited (static or animated) with setup.** See [here](../features/#stickers). |
-| Public read receipts | Supported ambiguously. | **Supported.** |
-| **Direct messages** | Not encrypted unless explicitly opted into secret chat, which cannot be carried across devices. VoIP is encrypted. | **Encrypted by default**, including VoIP. |
-| **Group chats** | You can join up to 500 groups and channels. | You can join an **unlimited** amount of rooms. |
-| VoIP in groups | Supported. | Limited Support via integration with Jitsi. Expected to be replaced by a better solution during 2022. |
-| Organizing chats | You can pin or archive groups (similar to favourite and low priority on Element/SchildiChat). | Rooms can be included within an unlimited amount of Spaces. Spaces may also include other Spaces. |
-| Group chat privacy | You may deny new members from reading more than 100 messages prior to them joining. | You may deny new members from reading messages prior to them being invited / joining. You may also allow or deny guest access (such as [Matrix Static](http://view.matrix.org/)) from reading messages. You may also enable encryption[^1]. |
-| Publicity | Any group or channel set to public can be listed in search results, but how they are shown is arbitrary, as global search is not always visible to users. | Each homeserver has a room directory which anyone in that homeserver may publish to. |
-| Invite | Through directly inviting users, or through generating invite links. | Through directly inviting users, or through shareable [addresses](../features/#promotion). |
-| Group chat permissions | Permissions of each administrator are set manually. All admins are equal (except owner). Permissions of a member do not survive leave and rejoin. | 2^54 power levels (I think it's -2^53 to 2^53-1, however I highly doubt you will *ever* reach that limit). A user acquires a permission if their power level is equal to or higher than the power level required for the specific permission. Power levels of members survive leave and rejoin. |
-| Size limits of group chats | Up to 100k members in groups, unlimited in one-to-many channels. | No artificial limits, albeit current implementations do not perform well with rooms having more than a few tens of thousands of members and a few dozens of homeservers. | 
-| Disabled and deleted account handling | Disabling an account is reversible until one year after disabling. Accounts that do not login for a year get automatically deleted. Messages from deleted accounts survive for one more year from deletion. | Disabling an account is usually irreversible. Messages from disabled accounts are not sent to further users and servers. Rooms created by disabled accounts stay. |
-| Ads | Popular channels now carry ads that you cannot opt out. | It is technically possible for a homeserver to insert ads, but **there are no known occurrences**. |
-| **Network access** | **IPv4 supported, [IPv6 broken](https://flameeyes.blog/2017/08/06/ipv6-horror-story-telegram/)**.  | ***Most if not all homeservers participating in the public federation have IPv4 connectivity but IPv6 connectivity varies from homeserver to homeserver.**. |
+| Аватар | Статический или анимированный; макс.размер неизвестен. Можно увеличить; возвращаемый аватар имеет максимальное разрешение 640x640. | **См. "Вложения" для ограничений.** Можно увеличивать (хотя бы в Element/SchildiChat), в случае которого аватар показывается в оригинале. Анимированные аватарки поддерживаются и будут отображаться (хотя бы в Element/SchildiChat). |
+| Биография профиля | **Поддерживается**. | В будущем будет поддерживаться. |
+| Разные никнеймы для разных комнат | Не поддерживается, но админы могут разговарить анонимно от имени группы, также можно разговаривать от имени своих каналов, с Premium. | **Поддерживается** (`/myroomnick`). До ~65,2КБ. [^2] |
+| Разный аватар для разных комнат | Не поддерживается. | [**Поддерживается**](../features/#вложения) (`/myroomavatar`). См. "Вложения" для ограничений. |
+| 2FA | Одноразовый код, отправляется в другую сессию. | Не требуется для входа, но для (QR код, сравнение эмодзи, или ключ безопасности) для просмотра ранее зашифрованных сообщений. |
+| **Текстовые сообщения** | До 4096 символов. Поддерживается Markdown. | **До ~65,2КБ (до ~21,27 КБ, если сообщение с форматом имеет неформатированную версию).[^2] [Поддерживает Markdown и HTML.](../features/#текст)** |
+| Вложения | **2 ГБ бесплатно, 4 ГБ с Telegram Premium.** | До 50~100 МБ (для многих домашних серверов; можете поменять если у Вас свой). |
+| Реакции | Ограничено капец. Должны быть включены в группах. | Все эмодзи Unicode и [текст (можно вместе с эмодзи)](../features/#реакции). |
+| Стикеры | До 200 наборов из 120 статических или 50 анимированных. | **Без ограничений (статический или анимированный), требует настройки.** См. [здесь](../features/#стикеры). |
+| Общедоступные отчёты о прочтении | Двусмысленно: только для своих сообщений, в небольших группах. | **Поддерживаются.** |
+| **Личные сообщения** | Незашифровано вне секретного чата, которые не могут быть перемещены между устройствами. VoIP (звонки) зашифрованы. | **Зашифровано по умолчанию**, включая звонки VoIP. |
+| **Групповые чаты** | Вы можете присоединиться к 500 группам и каналам. | Вы можете присоединиться к **неограниченному** количеству комнат. |
+| Звонки VoIP в группах | Поддерживается. | Ограниченная поддержка через интеграцию Jitsi. Должно быть заменено более лучшим решением в 2022. (P.s.: сейчас 2023, не заменили) |
+| Сортировка чатов | Вы можете закрепить или архивировать (схожее на "Избранные" и "Низкий приоритет" в Element/SchildiChat). | "Избранные", "Низкий приоритет". Также можно добавлять в любым пространствам. Пространства могут включать другие пространства. |
+| Конфиденциальность групповых чатов | Вы можете запретить читать участникам больше 100 сообщений до его присоединения. | Вы можете запретить читать историю сообщений до приглашения / присоединения участника. Вы можете также запретить/разрешить гостевой доступ (как [Matrix Static](http://view.matrix.org/)) для чтения сообщений. Вы также можете включить шифрование[^1]. |
+| Общедоступность | Любая общедоступная группа или канал может быть найдена через поиск, но их показ произволен, так-как глобальный поиск не всегда доступен пользователям. | Каждый домашний сервер имеет свой каталог комнат. |
+| Приглашения | Ссылки/прямые приглашения. | Отправляя приглашение, или делясь [адресом](../features/#продвижение). |
+| Права в групповых чатах | Права каждого админа выставляются вручную. Права участника не сохраняются после перезахода. | 2^54 уровней прав (Я считаю что от -2^53 до 2^53-1, однако, вряд-ли *когда-нибудь* Вы дойдёте до ограничения). Пользователь приобретает право, если его уровень прав равен или выше выставленного требования для какого-то права. Уровни прав сохраняются после выхода. |
+| Ограничения размера чатов | До 100 тыс. участников в группах, без ограничений в каналах. | Без исскуственных ограничений, хотя текущие реализации не работают идеально с комнатами, имеющие пару десятков тысяч участников и пару десятков домашних серверов. | 
+| Обработка отключенных и удалённых аккаунтов | Отключение аккаунта невозвратно через 1 год после отключения. Аккаунты, неактивные в течении года, удаляются. Сообщения от удалённых аккаунтов остаются 1 год. | Отключение аккаунта обычно невозвратно. Сообщения от отключенных аккаунтов не передаются другим пользователям/домашним серверам. Комнаты, созданные отключенными аккаунтами, остаются. |
+| Реклама | Популярные каналы имеют проплаченную рекламу от Telegram, от которой Вы не можете отказаться. | Домашние серверы, технически могут добавить рекламу, но **отсутствуют известные случаи**. |
+| **Доступ к сети** | **IPv4 поддерживается, [IPv6 сломан](https://flameeyes.blog/2017/08/06/ipv6-horror-story-telegram/)**.  | ***Большая часть домашних серверов, участвующих в общедоступной федерации имеют подключение IPv4, но подключение IPv6 варьируется от домашнего сервера к домашнему серверу.**. |
 
 
-## Helpful Tips
+## Советы
 
-There is a [bridge](https://t2bot.io/telegram) that allows you to connect a Telegram group with a Matrix room.
+Есть [мост](https://github.com/mautrix/telegram), который разрешает соединять комнаты Matrix с группой Telegram. Возможно соединять ЛС, пользоваться Telegram из Matrix при самообслуживании.
 
-## Footnotes
+## Примечания
 
-[^1]: Enabling encryption is irreversible for security reasons. Note that it is pointless to enable encryption in a public room, with one exception: the case you want to have a persistent cryptographic trail of who read the messages. Furthermore, enabling encryption means users will not see messages before their invitation (if applicable) or their entry.
+[^1]: Включение шифрования необратимо. Кстати, включать шифрование в общедоступных комнатах - бессмыслено, но есть 1 исключение: случай, когда Вы хотите чтобы оставался криптографический "хвост" тех, кто читает Ваши сообщения. Более того, включение шифрования запретит читать сообщения до приглашения/присоединения пользователя.
 
-[^2]: Limited by Matrix event size limits. The current event size limit is specified to be 65536 bytes. Formatted message size limit assuming the formatted body takes approximately twice as much as plain text body.
+[^2]: Ограничено размерами событий Matrix. Текущий максимум - 65536 байт. Подразумевается, что форматированное сообщение в 2 раза больше оригинала.
